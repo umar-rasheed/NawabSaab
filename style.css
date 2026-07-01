@@ -1,103 +1,100 @@
 body {
     margin: 0;
-    padding: 0;
     font-family: 'Poppins', sans-serif;
-    background: #111;
-    color: #eee;
+    background: #0a0a0a;
+    color: #f0e6d2;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.envelope {
-    width: 320px;
-    height: 420px;
+.closed-card {
+    width: 340px;
+    height: 480px;
     background: #1a1a1a;
-    border: 12px solid #d4af37;
-    border-radius: 12px;
-    position: relative;
+    border: 10px solid #d4af37;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     cursor: pointer;
     box-shadow: 0 20px 40px rgba(0,0,0,0.8);
-    transition: transform 0.6s;
 }
 
-.envelope:hover {
-    transform: scale(1.03);
+.gold-border {
+    width: 90%;
+    height: 90%;
+    border: 3px solid #d4af37;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.flap {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 50%;
-    background: linear-gradient(#d4af37, #b8972e);
-    clip-path: polygon(0 0, 100% 0, 50% 60%);
-    transition: all 1.2s ease;
+.closed-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    line-height: 1.1;
 }
 
-.invite-text {
-    position: absolute;
-    bottom: 80px;
-    left: 50%;
-    transform: translateX(-50%);
+.tap-text {
+    margin-top: 30px;
     color: #d4af37;
     font-size: 1.1rem;
-    font-weight: bold;
 }
 
-/* Main Invitation */
-.main-invitation {
+/* Open Content */
+.open-content {
     max-width: 420px;
     width: 100%;
-    background: #1a1a1a;
-    border: 3px solid #d4af37;
-    border-radius: 20px;
-    padding: 40px 30px;
+    padding: 30px;
     text-align: center;
-    box-shadow: 0 20px 50px rgba(212,175,55,0.2);
 }
 
 .bismillah {
     color: #d4af37;
-    font-size: 1.9rem;
-    margin-bottom: 15px;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
 }
 
-.couple {
+h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 2.8rem;
-    line-height: 1.1;
-    margin: 20px 0 40px;
+    font-size: 2.6rem;
+    margin-bottom: 40px;
 }
 
-.tabs {
-    display: flex;
-    margin-bottom: 30px;
-    border-bottom: 2px solid #444;
-}
-
-.tab-btn {
-    flex: 1;
-    padding: 12px;
-    background: none;
-    border: none;
-    color: #aaa;
-    font-size: 1.1rem;
+.event-card {
+    background: #1f1f1f;
+    margin: 15px 0;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #d4af37;
     cursor: pointer;
 }
 
-.tab-btn.active {
-    color: #d4af37;
-    border-bottom: 3px solid #d4af37;
+.event-header {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.tab-content {
-    min-height: 120px;
+.event-header h3 {
+    color: #d4af37;
 }
 
-.tab-content h2 {
-    color: #d4af37;
-    margin-bottom: 10px;
+.arrow {
+    transition: transform 0.3s;
+}
+
+.event-body {
+    padding: 0 20px 20px;
+    text-align: left;
+    line-height: 1.6;
+}
+
+.event-body.show {
+    display: block;
 }
