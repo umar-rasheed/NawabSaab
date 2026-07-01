@@ -1,72 +1,41 @@
-body {
-    margin: 0;
-    padding: 20px;
-    font-family: 'Poppins', sans-serif;
-    background: #f8f1e3;
-    color: #2c1f14;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+body { margin:0; font-family:'Poppins',sans-serif; background:#f5f0e6; min-height:100vh; }
+.screen { position:fixed; inset:0; display:none; align-items:center; justify-content:center; }
+.screen.active { display:flex; }
+
+.card {
+    background:white;
+    padding:40px 30px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 20px 40px rgba(0,0,0,0.15);
+    max-width:380px;
+    width:90%;
+    border:8px solid #d4af37;
 }
 
-.invitation {
-    max-width: 460px;
-    background: white;
-    border: 12px solid #d4af37;
-    padding: 50px 35px;
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+.closed-card h1 { font-family:'Playfair Display',serif; font-size:2.6rem; margin-bottom:30px; }
+.tap { color:#b8972e; font-size:1.2rem; }
+
+.bismillah { color:#b8972e; font-size:1.8rem; margin-bottom:15px; }
+
+.menu button {
+    display:block;
+    width:100%;
+    padding:16px;
+    margin:12px 0;
+    background:#d4af37;
+    color:#2c1f14;
+    border:none;
+    border-radius:12px;
+    font-size:1.1rem;
+    cursor:pointer;
 }
 
-.bismillah {
-    font-size: 2.1rem;
-    color: #b8972e;
-    margin-bottom: 20px;
-    font-family: 'Playfair Display', serif;
-}
-
-.couple {
-    font-family: 'Playfair Display', serif;
-    font-size: 3.1rem;
-    line-height: 1.05;
-    margin: 20px 0 30px;
-}
-
-.tagline {
-    font-size: 1.15rem;
-    margin-bottom: 40px;
-    font-style: italic;
-}
-
-.events {
-    margin: 40px 0;
-}
-
-.event {
-    margin: 25px 0;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #e5d9c0;
-}
-
-.event:last-child {
-    border-bottom: none;
-}
-
-.event h3 {
-    color: #b8972e;
-    font-size: 1.5rem;
-}
-
-.share {
-    margin-top: 30px;
-    background: #d4af37;
-    color: #2c1f14;
-    border: none;
-    padding: 16px 50px;
-    font-size: 1.1rem;
-    border-radius: 50px;
-    cursor: pointer;
-    width: 100%;
+.detail-screen button {
+    margin-top:30px;
+    padding:12px 40px;
+    background:#d4af37;
+    color:#2c1f14;
+    border:none;
+    border-radius:30px;
 }
