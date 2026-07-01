@@ -1,100 +1,72 @@
 body {
     margin: 0;
+    padding: 20px;
     font-family: 'Poppins', sans-serif;
-    background: #0a0a0a;
-    color: #f0e6d2;
+    background: #f8f1e3;
+    color: #2c1f14;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.closed-card {
-    width: 340px;
-    height: 480px;
-    background: #1a1a1a;
-    border: 10px solid #d4af37;
+.invitation {
+    max-width: 460px;
+    background: white;
+    border: 12px solid #d4af37;
+    padding: 50px 35px;
     border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     text-align: center;
-    cursor: pointer;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.8);
-}
-
-.gold-border {
-    width: 90%;
-    height: 90%;
-    border: 3px solid #d4af37;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.closed-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.4rem;
-    line-height: 1.1;
-}
-
-.tap-text {
-    margin-top: 30px;
-    color: #d4af37;
-    font-size: 1.1rem;
-}
-
-/* Open Content */
-.open-content {
-    max-width: 420px;
-    width: 100%;
-    padding: 30px;
-    text-align: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
 }
 
 .bismillah {
-    color: #d4af37;
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-}
-
-h1 {
+    font-size: 2.1rem;
+    color: #b8972e;
+    margin-bottom: 20px;
     font-family: 'Playfair Display', serif;
-    font-size: 2.6rem;
+}
+
+.couple {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.1rem;
+    line-height: 1.05;
+    margin: 20px 0 30px;
+}
+
+.tagline {
+    font-size: 1.15rem;
     margin-bottom: 40px;
+    font-style: italic;
 }
 
-.event-card {
-    background: #1f1f1f;
-    margin: 15px 0;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid #d4af37;
+.events {
+    margin: 40px 0;
+}
+
+.event {
+    margin: 25px 0;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e5d9c0;
+}
+
+.event:last-child {
+    border-bottom: none;
+}
+
+.event h3 {
+    color: #b8972e;
+    font-size: 1.5rem;
+}
+
+.share {
+    margin-top: 30px;
+    background: #d4af37;
+    color: #2c1f14;
+    border: none;
+    padding: 16px 50px;
+    font-size: 1.1rem;
+    border-radius: 50px;
     cursor: pointer;
-}
-
-.event-header {
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.event-header h3 {
-    color: #d4af37;
-}
-
-.arrow {
-    transition: transform 0.3s;
-}
-
-.event-body {
-    padding: 0 20px 20px;
-    text-align: left;
-    line-height: 1.6;
-}
-
-.event-body.show {
-    display: block;
+    width: 100%;
 }
