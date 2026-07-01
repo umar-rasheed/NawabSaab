@@ -1,99 +1,33 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+// Simple script for Umar & Aiesha Wedding Card
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('%cMashaAllah! Umar Rasheed & Aiesha Bashir Wedding Invitation', 'color: #d4af37; font-size: 16px;');
+    
+    // Optional: Add floating animation to card
+    const card = document.querySelector('.invitation-card');
+    if (card) {
+        card.style.animation = 'gentleFloat 6s ease-in-out infinite';
+    }
+});
 
-body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #0a2f2a, #1a3f35);
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    color: #f0e6d2;
-}
+// Gentle floating animation
+const style = document.createElement('style');
+style.innerHTML = `
+    @keyframes gentleFloat {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-15px); }
+    }
+`;
+document.head.appendChild(style);
 
-.invitation-card {
-    max-width: 420px;
-    width: 100%;
-    background: rgba(15, 35, 30, 0.95);
-    border: 8px solid #d4af37;
-    border-radius: 20px;
-    padding: 40px 25px;
-    text-align: center;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-    position: relative;
-    overflow: hidden;
-}
-
-.bismillah {
-    font-size: 2rem;
-    color: #d4af37;
-    margin-bottom: 20px;
-    font-family: 'Playfair Display', serif;
-    letter-spacing: 3px;
-}
-
-.main-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.8rem;
-    line-height: 1.1;
-    margin: 25px 0;
-    color: white;
-}
-
-.with-great-pleasure {
-    font-size: 1.1rem;
-    margin: 20px 0 35px;
-    font-style: italic;
-    color: #c9b38a;
-}
-
-.events {
-    margin: 30px 0;
-    border-top: 1px solid #d4af37;
-    border-bottom: 1px solid #d4af37;
-    padding: 25px 0;
-}
-
-.event {
-    margin: 18px 0;
-}
-
-.event h3 {
-    color: #d4af37;
-    font-size: 1.4rem;
-    margin-bottom: 5px;
-}
-
-.share-btn {
-    margin-top: 30px;
-    background: #d4af37;
-    color: #0a2f2a;
-    border: none;
-    padding: 14px 30px;
-    font-size: 1.1rem;
-    border-radius: 50px;
-    cursor: pointer;
-    width: 100%;
-}
-
-.share-btn:hover {
-    background: white;
-    transform: scale(1.05);
-}
-
-/* Elegant decorative corners */
-.invitation-card::before,
-.invitation-card::after {
-    content: '✦';
-    position: absolute;
-    font-size: 2.5rem;
-    color: #d4af37;
-    opacity: 0.3;
-}
-
-.invitation-card::before { top: 15px; left: 20px; }
-.invitation-card::after { bottom: 15px; right: 20px; }
+// Share functionality
+document.querySelector('.share-btn').addEventListener('click', () => {
+    if (navigator.share) {
+        navigator.share({
+            title: 'Umar Rasheed & Aiesha Bashir Wedding',
+            text: 'You are invited! Mehndi 28 July, Barat 30 July, Walima 2 August',
+            url: window.location.href
+        });
+    } else {
+        alert('Copy the link and share with family & friends ❤️');
+    }
+});
