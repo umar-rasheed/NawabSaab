@@ -8,29 +8,54 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="invitation">
-        <div class="bismillah">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْم</div>
-        <h1 class="couple">Umar Rasheed & Aiesha Bashir</h1>
-        <p class="tagline">With utmost joy we invite you to our wedding celebrations</p>
+    <!-- Closed Card -->
+    <div id="closed" class="screen active">
+        <div class="card closed-card">
+            <h1>Umar Rasheed & Aiesha Bashir</h1>
+            <p class="tap">Tap to Open Invitation</p>
+        </div>
+    </div>
 
-        <div class="events">
-            <div class="event">
-                <h3>Mehndi</h3>
-                <p>28 July 2026</p>
-            </div>
-            <div class="event">
-                <h3>Barat</h3>
-                <p>30 July 2026 • 3:00 PM</p>
-                <p>Sialkot Grand Event Marquee</p>
-            </div>
-            <div class="event">
-                <h3>Walima</h3>
-                <p>2 August 2026 • 2:00 PM</p>
-                <p>Bradan Marquee</p>
+    <!-- Inside Card -->
+    <div id="inside" class="screen">
+        <div class="card inside-card">
+            <div class="bismillah">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْم</div>
+            <h2>Welcome</h2>
+            <div class="menu">
+                <button onclick="showDetails('mehndi')">Mehndi</button>
+                <button onclick="showDetails('barat')">Barat</button>
+                <button onclick="showDetails('walima')">Walima</button>
             </div>
         </div>
+    </div>
 
-        <button class="share">Share Invitation</button>
+    <!-- Mehndi Detail -->
+    <div id="mehndi-detail" class="screen detail-screen">
+        <div class="card">
+            <h2>Mehndi Ceremony</h2>
+            <p>28 July 2026</p>
+            <button onclick="backToInside()">Back</button>
+        </div>
+    </div>
+
+    <!-- Barat Detail -->
+    <div id="barat-detail" class="screen detail-screen">
+        <div class="card">
+            <h2>Barat</h2>
+            <p>30 July 2026 • 3:00 PM</p>
+            <p>Sialkot Grand Event Marquee</p>
+            <button onclick="backToInside()">Back</button>
+        </div>
+    </div>
+
+    <!-- Walima Detail -->
+    <div id="walima-detail" class="screen detail-screen">
+        <div class="card">
+            <h2>Walima</h2>
+            <p>2 August 2026 • 2:00 PM</p>
+            <p>Bradan Marquee</p>
+            <button onclick="backToInside()">Back</button>
+        </div>
     </div>
 
     <script src="script.js"></script>
