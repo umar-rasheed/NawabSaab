@@ -8,10 +8,9 @@
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Great+Vibes&amp;display=swap');
 
     :root {
-      --bg: #F9F4EB;
-      --text: #2C2522;
       --gold: #C5A46E;
       --gold-foiling: #D4AF37;
+      --text: #2C2522;
     }
 
     body {
@@ -22,17 +21,9 @@
       line-height: 1.7;
     }
 
-    .overlay {
-      background: rgba(249, 244, 235, 0.92);
-      min-height: 100vh;
-    }
-
-    h1, h2, h3 { font-weight: 700; line-height: 1.1; margin: 0; }
-
     .name {
       font-family: 'Great Vibes', cursive;
       font-size: clamp(2.8rem, 8vw, 4.8rem);
-      color: var(--text);
     }
 
     .ampersand {
@@ -54,131 +45,8 @@
     }
 
     .gold-divider img {
-      max-width: 280px;
-      height: auto;
-    }
-
-    #envelope-screen {
-      position: fixed;
-      inset: 0;
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(0,0,0,0.6);
-      padding: 2rem;
-    }
-
-    #envelope {
-      position: relative;
-      width: min(420px, 92vw);
-      height: min(310px, 68vh);
-      cursor: pointer;
-    }
-
-    .envelope-body {
-      position: absolute;
-      inset: 0;
-      background: white;
-      border: 14px solid var(--gold);
-      box-shadow: 0 30px 80px rgba(0,0,0,0.3);
-      overflow: hidden;
-    }
-
-    .monogram {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 110px;
-      height: 110px;
-      z-index: 3;
-    }
-
-    .monogram img {
+      max-width: 320px;
       width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-    .envelope-text {
-      position: absolute;
-      bottom: 42px;
-      left: 0;
-      right: 0;
-      text-align: center;
-      font-size: 1.05rem;
-      letter-spacing: 3.5px;
-      font-weight: 600;
-      color: #2C2522;
-    }
-
-    .tap-text {
-      position: absolute;
-      bottom: 20px;
-      left: 0;
-      right: 0;
-      text-align: center;
-      font-size: 0.8rem;
-      letter-spacing: 3px;
-      color: #A67C52;
-      animation: pulse 2.5s infinite;
-    }
-
-    .envelope-flap {
-      position: absolute;
-      top: -2px;
-      left: -2px;
-      width: calc(100% + 4px);
-      height: 52%;
-      background: linear-gradient(#F9F4EB, #F3EDE3);
-      border: 14px solid var(--gold);
-      border-bottom: none;
-      transform-origin: top center;
-      transition: transform 1.4s cubic-bezier(0.23, 1, 0.32, 1);
-      z-index: 4;
-    }
-
-    #envelope.opened .envelope-flap {
-      transform: rotateX(-140deg);
-    }
-
-    #main-invitation {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 2rem 1rem;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 1.2s ease;
-    }
-
-    #main-invitation.visible {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .bismillah {
-      text-align: center;
-      padding: 3rem 1rem 2rem;
-    }
-
-    .bismillah-arabic {
-      font-size: 2.4rem;
-      color: var(--gold-foiling);
-      margin-bottom: 0.6rem;
-    }
-
-    .hero {
-      text-align: center;
-      padding-bottom: 2rem;
-    }
-
-    .events-name-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-      max-width: 980px;
-      margin: 0 auto;
     }
 
     .event-name-card {
@@ -190,56 +58,23 @@
       cursor: pointer;
       transition: all 0.4s ease;
       box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      margin-bottom: 1rem;
     }
 
     .event-name-card:hover {
-      transform: translateY(-8px);
+      transform: translateY(-6px);
       border-color: var(--gold);
-      box-shadow: 0 20px 45px rgba(0,0,0,0.12);
     }
 
     .event-name-card h3 {
       font-size: 1.9rem;
       margin: 1rem 0 0.5rem;
-      color: var(--text);
     }
 
     .event-name-hint {
       color: var(--gold);
       font-size: 0.9rem;
       letter-spacing: 1px;
-    }
-
-    .modal {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.6);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 2000;
-      padding: 1rem;
-    }
-
-    .modal.active { display: flex; }
-
-    .modal-content {
-      background: white;
-      border-radius: 14px;
-      max-width: 460px;
-      width: 100%;
-      padding: 2.5rem 2rem;
-      position: relative;
-      box-shadow: 0 25px 70px rgba(0,0,0,0.3);
-    }
-
-    .modal-close {
-      position: absolute;
-      top: 1rem;
-      right: 1.2rem;
-      font-size: 2rem;
-      cursor: pointer;
-      color: #666;
     }
 
     .btn {
@@ -250,7 +85,7 @@
       font-size: 0.95rem;
       letter-spacing: 1px;
       cursor: pointer;
-      transition: all 0.3s ease;
+      margin: 0 8px;
     }
 
     .btn:hover {
@@ -258,217 +93,71 @@
       color: white;
     }
 
-    .music-toggle {
-      background: #F3EDE3;
-      border: 1px solid #D4C3A3;
-      padding: 0.5rem 1.2rem;
-      border-radius: 50px;
-      cursor: pointer;
-      font-size: 0.9rem;
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
     }
 
-    .music-toggle.active {
-      background: var(--gold);
-      color: white;
+    .modal.active { display: flex; }
+
+    .modal-content {
+      background: white;
+      border-radius: 14px;
+      max-width: 440px;
+      width: 95%;
+      padding: 2.5rem 2rem;
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1.3rem;
+      font-size: 2rem;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
 
   <!-- ENVELOPE -->
-  <div id="envelope-screen">
-    <div id="envelope">
-      <div class="envelope-body">
-        <div class="monogram">
-          <img src="monogram.png" alt="U & A Monogram">
+  <div id="envelope-screen" style="position:fixed; inset:0; z-index:1000; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.6);">
+    <div id="envelope" style="position:relative; width:min(420px,92vw); height:min(310px,68vh); cursor:pointer;">
+      <div style="position:absolute; inset:0; background:white; border:14px solid var(--gold); box-shadow:0 30px 80px rgba(0,0,0,0.3);">
+        <!-- Monogram Image -->
+        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:110px; height:110px;">
+          <img src="monogram.png" alt="U & A Monogram" style="width:100%; height:100%; object-fit:contain;">
         </div>
-        <div class="envelope-text">UMAR RASHEED &amp; AIESHA BASHIR</div>
-        <div class="tap-text">TAP TO OPEN</div>
+        <div style="position:absolute; bottom:42px; left:0; right:0; text-align:center; font-size:1.05rem; letter-spacing:3.5px; font-weight:600;">
+          UMAR RASHEED &amp; AIESHA BASHIR
+        </div>
+        <div style="position:absolute; bottom:20px; left:0; right:0; text-align:center; font-size:0.8rem; letter-spacing:3px; color:#A67C52;">
+          TAP TO OPEN
+        </div>
       </div>
-      <div class="envelope-flap"></div>
+
+      <!-- Flap -->
+      <div id="flap" style="position:absolute; top:-2px; left:-2px; width:calc(100% + 4px); height:52%; background:linear-gradient(#F9F4EB, #F3EDE3); border:14px solid var(--gold); border-bottom:none; transform-origin:top center; transition:transform 1.4s cubic-bezier(0.23,1,0.32,1); z-index:4;"></div>
     </div>
   </div>
 
   <!-- MAIN CONTENT -->
-  <div id="main-invitation">
+  <div id="main-invitation" style="max-width:1100px; margin:0 auto; padding:2rem 1rem; opacity:0; visibility:hidden; transition:all 1.2s ease;">
 
-    <div style="display:flex; justify-content:space-between; align-items:center; padding:1rem 0; border-bottom:1px solid #D4C3A3; margin-bottom:1rem;">
-      <div style="font-family:'Great Vibes', cursive; font-size:1.5rem; color:var(--gold);">Umar &amp; Aiesha</div>
-      <div style="display:flex; gap:12px; align-items:center;">
-        <div id="music-btn" class="music-toggle">♫ Music</div>
-        <div id="theme-toggle" class="music-toggle">Dark</div>
+    <!-- Header -->
+    <div style="display:flex; justify-content:space-between; align-items:center; padding-bottom:1rem; border-bottom:1px solid #D4C3A3; margin-bottom:1.5rem;">
+      <div style="font-family:'Great Vibes', cursive; font-size:1.6rem; color:var(--gold);">Umar &amp; Aiesha</div>
+      <div>
+        <button id="music-btn" class="btn" style="padding:0.5rem 1.2rem; border-radius:50px;">♫ Music</button>
+        <button id="theme-btn" class="btn" style="padding:0.5rem 1.2rem; border-radius:50px;">Dark</button>
       </div>
     </div>
 
-    <div class="bismillah">
-      <div class="bismillah-arabic">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
-      <p style="color:#655C52; font-style:italic;">In the name of Allah, the Most Gracious, the Most Merciful</p>
-    </div>
-
-    <div class="hero">
-      <h1 class="name">Umar Rasheed</h1>
-      <span class="ampersand">&amp;</span>
-      <h1 class="name">Aiesha Bashir</h1>
-      <p style="max-width:620px; margin:1.5rem auto 0; color:#655C52;">
-        Together with their families, we request the honour of your presence<br>
-        at the celebration of their sacred union.
-      </p>
-    </div>
-
-    <div class="gold-divider">
-      <img src="divider.png" alt="Gold Divider" style="max-width:320px; width:100%;">
-    </div>
-
-    <section style="max-width:1000px; margin:0 auto; padding:0 1rem;">
-      <h2 class="section-title">The Celebrations</h2>
-      <p style="text-align:center; color:#655C52; margin-bottom:2rem;">Tap on any event to view details</p>
-
-      <div class="events-name-grid">
-        <div class="event-name-card" data-event="mehndi">
-          <h3>Mehndi</h3>
-          <div class="event-name-hint">View Details →</div>
-        </div>
-        <div class="event-name-card" data-event="barat">
-          <h3>Barat</h3>
-          <div class="event-name-hint">View Details →</div>
-        </div>
-        <div class="event-name-card" data-event="walima">
-          <h3>Walima</h3>
-          <div class="event-name-hint">View Details →</div>
-        </div>
-      </div>
-    </section>
-
-    <div class="gold-divider" style="margin-top:3rem;">
-      <img src="divider.png" alt="Gold Divider" style="max-width:320px; width:100%;">
-    </div>
-
-    <div style="text-align:center; margin:2rem 0 4rem;">
-      <button id="share-btn" class="btn" style="margin-right:12px;">Share Invitation</button>
-      <button id="rsvp-btn" class="btn" style="background:var(--gold); color:white; border:none;">RSVP</button>
-    </div>
-
-    <p style="text-align:center; color:#655C52; font-style:italic; padding-bottom:3rem;">
-      May Allah bless this union with love and barakah. Ameen.
-    </p>
-  </div>
-
-  <!-- Event Modal -->
-  <div id="event-modal" class="modal">
-    <div class="modal-content">
-      <span class="modal-close" onclick="closeModal()">&times;</span>
-      <div id="modal-body"></div>
-    </div>
-  </div>
-
-  <script>
-    // Envelope
-    const envelope = document.getElementById('envelope');
-    const envelopeScreen = document.getElementById('envelope-screen');
-    const main = document.getElementById('main-invitation');
-
-    envelope.addEventListener('click', () => {
-      envelope.classList.add('opened');
-      setTimeout(() => {
-        envelopeScreen.style.transition = 'opacity 1.2s ease';
-        envelopeScreen.style.opacity = '0';
-        setTimeout(() => {
-          envelopeScreen.style.display = 'none';
-          main.style.transition = 'all 1.3s ease';
-          main.style.opacity = '1';
-          main.style.visibility = 'visible';
-          main.classList.add('visible');
-        }, 1100);
-      }, 1500);
-    });
-
-    // Theme
-    const themeBtn = document.getElementById('theme-toggle');
-    themeBtn.addEventListener('click', () => {
-      document.body.classList.toggle('dark');
-      themeBtn.textContent = document.body.classList.contains('dark') ? 'Light' : 'Dark';
-    });
-
-    // Music
-    let audioCtx, musicOn = false, interval;
-    const musicBtn = document.getElementById('music-btn');
-
-    musicBtn.addEventListener('click', () => {
-      if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-      musicOn = !musicOn;
-      musicBtn.classList.toggle('active', musicOn);
-
-      if (musicOn) {
-        interval = setInterval(() => {
-          if (!musicOn) return;
-          const osc = audioCtx.createOscillator();
-          const gain = audioCtx.createGain();
-          osc.frequency.value = 280 + Math.random() * 120;
-          gain.gain.value = 0.04;
-          osc.connect(gain);
-          gain.connect(audioCtx.destination);
-          osc.start();
-          setTimeout(() => {
-            gain.gain.linearRampToValueAtTime(0.0001, audioCtx.currentTime + 1.5);
-          }, 800);
-          setTimeout(() => osc.stop(), 2200);
-        }, 2100);
-      } else {
-        clearInterval(interval);
-      }
-    });
-
-    // Events
-    const cards = document.querySelectorAll('.event-name-card');
-    const modal = document.getElementById('event-modal');
-    const modalBody = document.getElementById('modal-body');
-
-    const eventDetails = {
-      mehndi: { name: "Mehndi", date: "28 July 2026", time: "Evening", venue: "Private Family Residence, Sialkot" },
-      barat: { name: "Barat", date: "30 July 2026", time: "3:00 PM", venue: "Sialkot Grand Event Marquee" },
-      walima: { name: "Walima", date: "2 August 2026", time: "2:00 PM", venue: "Bradan Marquee" }
-    };
-
-    cards.forEach(card => {
-      card.addEventListener('click', () => {
-        const key = card.dataset.event;
-        const ev = eventDetails[key];
-        modalBody.innerHTML = `
-          <h2 style="text-align:center; margin-bottom:1rem;">${ev.name}</h2>
-          <p style="text-align:center; font-size:1.3rem; color:#C5A46E; margin:0.8rem 0;"><strong>${ev.date}</strong></p>
-          <p style="text-align:center; color:#655C52;">${ev.time}</p>
-          <div style="background:#F9F4EB; padding:1.2rem; border-radius:8px; margin:1.5rem 0; text-align:center;">
-            ${ev.venue}
-          </div>
-        `;
-        modal.classList.add('active');
-      });
-    });
-
-    function closeModal() {
-      modal.classList.remove('active');
-    }
-
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeModal();
-    });
-
-    // Share
-    document.getElementById('share-btn').addEventListener('click', () => {
-      const text = `You're invited to the wedding of Umar Rasheed & Aiesha Bashir!\n\nMehndi: 28 July 2026\nBarat: 30 July 2026\nWalima: 2 August 2026`;
-      if (navigator.share) {
-        navigator.share({ text });
-      } else {
-        navigator.clipboard.writeText(text).then(() => alert('Invitation text copied!'));
-      }
-    });
-
-    // RSVP
-    document.getElementById('rsvp-btn').addEventListener('click', () => {
-      alert("Thank you! Your RSVP has been noted.");
-    });
-
-    console.log('%c[Wedding Invite] Final version with your custom images ready.', 'color:#C5A46E');
-  </script>
-</body>
-</html>
+    <!-- Bismillah -->
+    <div style="text-align:center; padding:2rem 0;">
+      <div style="font-size:2.3rem; color:var(--gold-foiling); margin-bottom:0.5rem;">بِسْمِ ٱللَّٰهِ ٱلرَّحْم
