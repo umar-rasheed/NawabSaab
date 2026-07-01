@@ -1,27 +1,29 @@
-// Modern Minimal Royal Wedding Invitation
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('%cMashaAllah - Umar Rasheed & Aiesha Bashir', 'color:#d4af37; font-size:18px;');
-
-    // Share button
-    const shareBtn = document.querySelector('.share-btn');
-    if (shareBtn) {
-        shareBtn.addEventListener('click', () => {
-            const text = `Umar Rasheed & Aiesha Bashir Wedding Invitation\nMehndi: 28 July | Barat: 30 July | Walima: 2 August\n`;
-            if (navigator.share) {
-                navigator.share({
-                    title: 'Wedding Invitation',
-                    text: text,
-                    url: window.location.href
-                });
-            } else {
-                alert('Link copied! Share with your loved ones ❤️');
-                navigator.clipboard.writeText(window.location.href);
-            }
-        });
-    }
+// Envelope Opening + Tab System
+document.getElementById('envelope').addEventListener('click', function() {
+    const envelope = this;
+    const main = document.getElementById('main-invitation');
+    
+    // Animate flap
+    envelope.style.transform = 'rotateX(180deg)';
+    
+    setTimeout(() => {
+        envelope.classList.add('hidden');
+        main.classList.remove('hidden');
+    }, 800);
 });
 
-// Subtle entrance animation
-setTimeout(() => {
-    document.querySelector('.card').style.opacity = '1';
-}, 300);
+// Tab functionality
+const tabButtons = document.querySelectorAll('.tab-btn');
+const tabContents = document.querySelectorAll('.tab-content');
+
+tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        // Remove active from all
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        tabContents.forEach(content => content.classList.add('hidden'));
+        
+        // Activate clicked
+        button.classList.add('active');
+        document.getElementById(button.dataset.tab).classList.remove('hidden');
+    });
+});
