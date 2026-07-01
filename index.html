@@ -8,36 +8,51 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Envelope -->
-    <div id="envelope" class="envelope">
-        <div class="flap"></div>
-        <div class="invite-text">Tap to Open</div>
+    <!-- Closed Card -->
+    <div id="closed-card" class="closed-card">
+        <div class="gold-border">
+            <h2 class="closed-title">Umar Rasheed<br>&<br>Aiesha Bashir</h2>
+            <p class="tap-text">Tap to Open Invitation</p>
+        </div>
     </div>
 
-    <!-- Main Invitation -->
-    <div id="main-invitation" class="main-invitation hidden">
+    <!-- Open Content -->
+    <div id="open-content" class="open-content hidden">
         <div class="bismillah">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْم</div>
-        <h1 class="couple">Umar Rasheed & Aiesha Bashir</h1>
+        <h1>Umar Rasheed & Aiesha Bashir</h1>
 
-        <div class="tabs">
-            <button class="tab-btn active" data-tab="mehndi">Mehndi</button>
-            <button class="tab-btn" data-tab="barat">Barat</button>
-            <button class="tab-btn" data-tab="walima">Walima</button>
-        </div>
+        <div class="events-list">
+            <div class="event-card" onclick="toggleEvent(this)">
+                <div class="event-header">
+                    <h3>Mehndi Ceremony</h3>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="event-body hidden">
+                    <p><strong>Date:</strong> 28 July 2026</p>
+                </div>
+            </div>
 
-        <div id="mehndi" class="tab-content">
-            <h2>Mehndi Ceremony</h2>
-            <p>28 July 2026</p>
-        </div>
-        <div id="barat" class="tab-content hidden">
-            <h2>Barat</h2>
-            <p>30 July 2026 • 3:00 PM</p>
-            <p>Sialkot Grand Event Marquee</p>
-        </div>
-        <div id="walima" class="tab-content hidden">
-            <h2>Walima</h2>
-            <p>2 August 2026 • 2:00 PM</p>
-            <p>Bradan Marquee</p>
+            <div class="event-card" onclick="toggleEvent(this)">
+                <div class="event-header">
+                    <h3>Barat</h3>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="event-body hidden">
+                    <p><strong>Date & Time:</strong> 30 July 2026 • 3:00 PM</p>
+                    <p><strong>Venue:</strong> Sialkot Grand Event Marquee</p>
+                </div>
+            </div>
+
+            <div class="event-card" onclick="toggleEvent(this)">
+                <div class="event-header">
+                    <h3>Walima</h3>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="event-body hidden">
+                    <p><strong>Date & Time:</strong> 2 August 2026 • 2:00 PM</p>
+                    <p><strong>Venue:</strong> Bradan Marquee</p>
+                </div>
+            </div>
         </div>
     </div>
 
