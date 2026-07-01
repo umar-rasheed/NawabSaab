@@ -1,33 +1,113 @@
-// Simple script for Umar & Aiesha Wedding Card
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('%cMashaAllah! Umar Rasheed & Aiesha Bashir Wedding Invitation', 'color: #d4af37; font-size: 16px;');
-    
-    // Optional: Add floating animation to card
-    const card = document.querySelector('.invitation-card');
-    if (card) {
-        card.style.animation = 'gentleFloat 6s ease-in-out infinite';
-    }
-});
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-// Gentle floating animation
-const style = document.createElement('style');
-style.innerHTML = `
-    @keyframes gentleFloat {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-15px); }
-    }
-`;
-document.head.appendChild(style);
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0f0f0f;
+    color: #f5f0e6;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    overflow: hidden;
+}
 
-// Share functionality
-document.querySelector('.share-btn').addEventListener('click', () => {
-    if (navigator.share) {
-        navigator.share({
-            title: 'Umar Rasheed & Aiesha Bashir Wedding',
-            text: 'You are invited! Mehndi 28 July, Barat 30 July, Walima 2 August',
-            url: window.location.href
-        });
-    } else {
-        alert('Copy the link and share with family & friends ❤️');
-    }
-});
+.container {
+    max-width: 480px;
+    width: 100%;
+}
+
+.card {
+    background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+    border: 2px solid #d4af37;
+    border-radius: 24px;
+    padding: 50px 35px;
+    text-align: center;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
+    position: relative;
+}
+
+.bismillah {
+    color: #d4af37;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 4px;
+}
+
+.couple {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2rem;
+    line-height: 1.05;
+    margin: 25px 0 35px;
+    color: #fff;
+}
+
+.invitation {
+    font-size: 1.15rem;
+    margin-bottom: 40px;
+    font-weight: 300;
+    color: #c9b38a;
+}
+
+.events {
+    margin: 40px 0;
+}
+
+.event-item {
+    margin: 22px 0;
+    padding-bottom: 18px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.event-item:last-child {
+    border-bottom: none;
+}
+
+.event-item h3 {
+    color: #d4af37;
+    font-size: 1.35rem;
+    margin-bottom: 6px;
+}
+
+.share-btn {
+    margin-top: 30px;
+    background: #d4af37;
+    color: #0f0f0f;
+    border: none;
+    padding: 16px 40px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.share-btn:hover {
+    background: #fff;
+    transform: translateY(-3px);
+}
+
+/* Royal subtle decoration */
+.card::before {
+    content: '❦';
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    font-size: 2.5rem;
+    color: rgba(212, 175, 55, 0.15);
+}
+
+.card::after {
+    content: '❦';
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    font-size: 2.5rem;
+    color: rgba(212, 175, 55, 0.15);
+}
