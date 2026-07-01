@@ -1,0 +1,894 @@
+/* 
+  Premium Luxury Islamic Wedding Invitation
+  Umar Rasheed & Aiesha Bashir
+  Ivory Elegance | Modern Minimal Royal Theme
+  Pure HTML/CSS/JS - Self contained & Fast loading
+*/
+
+:root {
+  /* Light Ivory Elegance Theme */
+  --bg: #F8F4EC;
+  --bg-alt: #F0E9DC;
+  --bg-card: #FDFAF3;
+  --text: #2C2522;
+  --text-muted: #6B5F54;
+  --text-light: #8A7A6A;
+  --gold: #C9A961;
+  --gold-dark: #A67C52;
+  --gold-light: #E8D9B5;
+  --border: #D4C3A3;
+  --accent: #8B6F47;
+  --shadow: rgba(44, 37, 34, 0.12);
+  --shadow-gold: rgba(201, 169, 97, 0.25);
+}
+
+.dark {
+  /* Elegant Dark Royal Theme */
+  --bg: #1A1612;
+  --bg-alt: #25201B;
+  --bg-card: #2C2522;
+  --text: #F8F4EC;
+  --text-muted: #B8A88F;
+  --text-light: #9C8A70;
+  --gold: #C9A961;
+  --gold-dark: #A67C52;
+  --gold-light: #D4C3A3;
+  --border: #5C5248;
+  --accent: #C9A961;
+  --shadow: rgba(0, 0, 0, 0.35);
+  --shadow-gold: rgba(201, 169, 97, 0.2);
+}
+
+/* Base & Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  transition: background-color 0.6s cubic-bezier(0.23, 1, 0.32, 1), 
+              color 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  overflow-x: hidden;
+}
+
+/* Elegant Typography */
+h1, h2, h3 {
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.name {
+  font-family: 'Great Vibes', 'Playfair Display', cursive;
+  font-size: clamp(2.8rem, 8vw, 4.8rem);
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: var(--text);
+}
+
+.ampersand {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(2.2rem, 6vw, 3.5rem);
+  color: var(--gold);
+  margin: 0 0.6rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.section-title {
+  font-size: 1.65rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 68px;
+  height: 1.5px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+}
+
+/* Elegant Gold Accents & Decorative Elements */
+.gold-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2.5rem 0;
+  opacity: 0.9;
+}
+
+.gold-divider::before,
+.gold-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+}
+
+.gold-divider span {
+  font-size: 1.1rem;
+  color: var(--gold);
+  font-weight: 400;
+  letter-spacing: 3px;
+}
+
+/* Islamic Geometric Subtle Pattern (CSS) */
+.pattern-bg {
+  background-image: 
+    linear-gradient(45deg, var(--gold) 0.8px, transparent 0.8px),
+    linear-gradient(-45deg, var(--gold) 0.8px, transparent 0.8px);
+  background-size: 38px 38px;
+  opacity: 0.035;
+  pointer-events: none;
+}
+
+/* ============================================
+   ENVELOPE / CARD ANIMATION - Premium Feel
+   ============================================ */
+#envelope-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #F8F4EC 0%, #F0E9DC 100%);
+  padding: 2rem 1rem;
+  transition: opacity 1.2s cubic-bezier(0.23, 1, 0.32, 1), 
+              visibility 1.2s;
+}
+
+.dark #envelope-screen {
+  background: linear-gradient(135deg, #1A1612 0%, #25201B 100%);
+}
+
+#envelope {
+  position: relative;
+  width: min(420px, 92vw);
+  height: min(310px, 68vh);
+  perspective: 1400px;
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+#envelope:hover {
+  transform: translateY(-4px) scale(1.005);
+}
+
+#envelope:active {
+  transform: scale(0.985);
+}
+
+/* Envelope Body - Elegant Paper with Gold Foil Border */
+.envelope-body {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #FDFAF3 0%, #F5EDE0 100%);
+  border: 13px solid var(--gold);
+  border-radius: 6px;
+  box-shadow: 
+    0 25px 70px var(--shadow),
+    0 0 0 1px #EDE4D3 inset,
+    inset 0 0 80px rgba(201, 169, 97, 0.06);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.dark .envelope-body {
+  background: linear-gradient(180deg, #2C2522 0%, #25201B 100%);
+  border-color: var(--gold);
+  box-shadow: 
+    0 25px 70px var(--shadow),
+    0 0 0 1px #3A322B inset,
+    inset 0 0 80px rgba(201, 169, 97, 0.08);
+}
+
+/* Elegant Inner Texture */
+.envelope-body::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(201, 169, 97, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201, 169, 97, 0.035) 1px, transparent 1px);
+  background-size: 22px 22px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Gold Corner Ornaments */
+.envelope-body::after {
+  content: '';
+  position: absolute;
+  inset: 18px;
+  border: 1px solid var(--gold);
+  border-radius: 2px;
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+/* Monogram / Wax Seal Style */
+.monogram {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 92px;
+  height: 92px;
+  border: 2.5px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  background: rgba(253, 250, 243, 0.65);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1), inset 0 0 0 1px var(--gold-light);
+}
+
+.dark .monogram {
+  background: rgba(44, 37, 34, 0.75);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.monogram span {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.85rem;
+  color: var(--gold);
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+
+/* Envelope Text */
+.envelope-text {
+  position: absolute;
+  bottom: 38px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 1.05rem;
+  color: var(--text);
+  letter-spacing: 3.5px;
+  font-weight: 600;
+  z-index: 3;
+  text-transform: uppercase;
+}
+
+.dark .envelope-text {
+  color: var(--text);
+}
+
+/* Tap to Open Indicator */
+.tap-text {
+  position: absolute;
+  bottom: 18px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 0.78rem;
+  letter-spacing: 2.5px;
+  color: var(--gold-dark);
+  font-weight: 500;
+  z-index: 3;
+  animation: gentle-pulse 2.8s infinite ease-in-out;
+}
+
+@keyframes gentle-pulse {
+  0%, 100% { opacity: 0.65; }
+  50% { opacity: 1; }
+}
+
+/* Envelope Flap - The Magic Part */
+.envelope-flap {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: calc(100% + 2px);
+  height: 52%;
+  background: linear-gradient(180deg, #F5EDE0 10%, #F0E9DC 100%);
+  border: 13px solid var(--gold);
+  border-bottom: none;
+  border-radius: 6px 6px 0 0;
+  z-index: 4;
+  transform-origin: top center;
+  transition: transform 1.35s cubic-bezier(0.23, 1.0, 0.32, 1);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  overflow: hidden;
+}
+
+.dark .envelope-flap {
+  background: linear-gradient(180deg, #2C2522 10%, #25201B 100%);
+}
+
+/* Flap Inner Gold Line */
+.envelope-flap::before {
+  content: '';
+  position: absolute;
+  top: 13px;
+  left: 13px;
+  right: 13px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  opacity: 0.6;
+}
+
+/* Flap Subtle Pattern */
+.envelope-flap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(135deg, rgba(201,169,97,0.04) 25%, transparent 25%) 0 0 / 18px 18px;
+  pointer-events: none;
+}
+
+/* Opened State */
+#envelope.opened .envelope-flap {
+  transform: rotateX(-138deg);
+  box-shadow: -2px 25px 35px rgba(0,0,0,0.18);
+}
+
+/* Inner Preview Card (visible when flap opens) */
+.inner-preview {
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 78%;
+  background: var(--bg-card);
+  border: 1px solid var(--gold);
+  border-radius: 3px;
+  padding: 1.1rem 1rem;
+  text-align: center;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.6s ease 0.9s, transform 0.6s ease 0.9s;
+  box-shadow: 0 8px 25px var(--shadow);
+}
+
+#envelope.opened .inner-preview {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-8px);
+}
+
+.dark .inner-preview {
+  background: var(--bg-card);
+  border-color: var(--gold);
+}
+
+.inner-preview .bismillah-small {
+  font-size: 0.95rem;
+  color: var(--gold);
+  margin-bottom: 0.35rem;
+  letter-spacing: 1px;
+}
+
+.inner-preview .couple-names-small {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.35rem;
+  color: var(--text);
+  line-height: 1.05;
+}
+
+/* ============================================
+   MAIN INVITATION CONTENT
+   ============================================ */
+#main-invitation {
+  min-height: 100vh;
+  padding-bottom: 6rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1.1s cubic-bezier(0.23, 1, 0.32, 1), 
+              visibility 1.1s;
+}
+
+#main-invitation.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Top Navigation / Controls */
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  background: rgba(248, 244, 236, 0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  padding: 0.85rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.4s ease;
+}
+
+.dark .top-nav {
+  background: rgba(26, 22, 18, 0.92);
+  border-bottom-color: #3A322B;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.nav-logo {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.35rem;
+  color: var(--gold);
+  letter-spacing: 0.5px;
+}
+
+/* Theme Toggle - Elegant */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--gold);
+}
+
+.theme-toggle .icon {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle .active {
+  background: var(--gold);
+  color: #2C2522;
+  box-shadow: 0 2px 6px var(--shadow-gold);
+}
+
+/* Bismillah Header */
+.bismillah-header {
+  text-align: center;
+  padding: 3.5rem 1.25rem 2rem;
+  background: linear-gradient(to bottom, var(--bg) 0%, var(--bg-alt) 100%);
+}
+
+.bismillah-arabic {
+  font-size: clamp(1.65rem, 5.5vw, 2.35rem);
+  color: var(--gold);
+  letter-spacing: 1.5px;
+  margin-bottom: 0.65rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.bismillah-trans {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  font-style: italic;
+  letter-spacing: 0.5px;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+/* Hero Couple Names */
+.hero {
+  text-align: center;
+  padding: 1.5rem 1.25rem 3rem;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+}
+
+.names-container {
+  margin: 1.8rem 0 1.4rem;
+}
+
+.tagline {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 620px;
+  margin: 0 auto;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+/* Event Cards - Premium Layout */
+#events {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.65rem;
+}
+
+.event-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2rem 1.85rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), 
+              box-shadow 0.4s ease,
+              border-color 0.3s ease;
+  box-shadow: 0 8px 30px var(--shadow);
+}
+
+.event-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px var(--shadow), 0 0 0 1px var(--gold-light);
+  border-color: var(--gold);
+}
+
+.event-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--gold), var(--gold-dark));
+  opacity: 0.85;
+}
+
+.event-icon {
+  width: 54px;
+  height: 54px;
+  margin-bottom: 1.35rem;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.event-icon svg {
+  width: 100%;
+  height: 100%;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  fill: none;
+}
+
+.event-card h3 {
+  font-size: 1.55rem;
+  margin-bottom: 0.35rem;
+  color: var(--text);
+}
+
+.event-date {
+  font-size: 1.15rem;
+  color: var(--gold);
+  font-weight: 600;
+  margin: 0.85rem 0 0.25rem;
+  letter-spacing: 0.5px;
+}
+
+.event-time {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 0.9rem;
+}
+
+.event-venue {
+  font-size: 0.98rem;
+  color: var(--text);
+  line-height: 1.55;
+  padding-top: 0.9rem;
+  border-top: 1px dashed var(--border);
+}
+
+/* RSVP & Actions */
+.actions-bar {
+  max-width: 720px;
+  margin: 3rem auto 0;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.95rem 2.1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  text-decoration: none;
+  border: 1px solid var(--gold);
+  background: transparent;
+  color: var(--text);
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.btn:hover {
+  background: var(--gold);
+  color: #2C2522;
+  border-color: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px var(--shadow-gold);
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: #2C2522;
+  border-color: var(--gold);
+}
+
+.btn-gold:hover {
+  background: var(--gold-dark);
+  color: #fff;
+  border-color: var(--gold-dark);
+}
+
+/* Music Toggle */
+.music-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.35rem;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.music-toggle:hover {
+  border-color: var(--gold);
+  color: var(--text);
+}
+
+.music-toggle.active {
+  background: var(--gold);
+  color: #2C2522;
+  border-color: var(--gold);
+}
+
+.music-toggle .icon {
+  font-size: 1.1rem;
+  transition: transform 0.4s ease;
+}
+
+.music-toggle.active .icon {
+  transform: scale(1.1);
+}
+
+/* Footer Blessing */
+.footer-blessing {
+  text-align: center;
+  padding: 4rem 1.5rem 2rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  font-style: italic;
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.75;
+}
+
+.footer-blessing::before {
+  content: '❖';
+  display: block;
+  color: var(--gold);
+  font-size: 1.1rem;
+  margin-bottom: 0.85rem;
+  opacity: 0.7;
+}
+
+/* RSVP Modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(44, 37, 34, 0.65);
+  padding: 1rem;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-content {
+  background: var(--bg-card);
+  border: 1px solid var(--gold);
+  border-radius: 10px;
+  width: 100%;
+  max-width: 440px;
+  padding: 2.5rem 2rem;
+  position: relative;
+  box-shadow: 0 25px 70px rgba(0,0,0,0.35);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1.1rem;
+  right: 1.3rem;
+  font-size: 1.6rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.modal-close:hover {
+  color: var(--gold);
+}
+
+.modal h3 {
+  text-align: center;
+  margin-bottom: 1.8rem;
+  font-size: 1.55rem;
+}
+
+.form-group {
+  margin-bottom: 1.35rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 0.45rem;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px var(--shadow-gold);
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.85rem;
+  margin-top: 1.5rem;
+}
+
+.form-actions button {
+  flex: 1;
+}
+
+/* Success State */
+.success-message {
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+.success-message .check {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 1.25rem;
+  border: 3px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.1rem;
+  color: var(--gold);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .names-container {
+    margin: 1.4rem 0 1rem;
+  }
+  
+  .event-card {
+    padding: 1.65rem 1.4rem;
+  }
+  
+  .top-nav {
+    padding: 0.7rem 1rem;
+  }
+  
+  .actions-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  #envelope {
+    width: min(360px, 95vw);
+    height: min(265px, 62vh);
+  }
+}
+
+/* Subtle Scroll Animations for Sections */
+.fade-in {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1), 
+              transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Print Styles (for those who want physical copy) */
+@media print {
+  #envelope-screen, .top-nav, .actions-bar, .music-toggle, .theme-toggle {
+    display: none !important;
+  }
+  
+  #main-invitation {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
+  body {
+    background: white;
+    color: black;
+  }
+}
