@@ -3,42 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Luxury Islamic Wedding Invitation">
-    <title>NawabSaab Wedding</title>
+    <meta name="description" content="Luxury Islamic Wedding Invitation - [Groom] &amp; [Bride]">
+    <title>[Groom] &amp; [Bride] | Islamic Wedding</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Poppins:wght@300;400;500&amp;display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Inline critical CSS if needed, but mainly external */
+    </style>
 </head>
 <body>
-
     <!-- Opening Screen -->
     <div id="opening-screen" class="opening-screen">
+        <div class="overlay"></div>
         <div class="content">
-            <div class="bismillah">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْم</div>
-            <h1 class="couple-names">NawabSaab</h1>
-            <p class="invitation-text">You are cordially invited</p>
+            <div class="bismillah">بِسْمِ اللهِ الرَّحْمنِ الرَّحِيم</div>
+            <div class="lanterns"></div>
+            <h1 class="couple-names">[Groom Name]<br>&amp;<br>[Bride Name]</h1>
+            <p class="invitation-text">You are cordially invited to our wedding</p>
             <button id="open-invitation" class="open-btn">Open Invitation <i class="fas fa-arrow-down"></i></button>
         </div>
     </div>
 
     <!-- Main Content -->
     <div id="main-content" class="main-content hidden">
+        <!-- Navigation -->
         <nav class="navbar">
             <div class="nav-container">
                 <div class="logo">Wedding</div>
-                <button id="music-toggle" class="music-btn"><i class="fas fa-music"></i></button>
+                <ul class="nav-links">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#countdown">Countdown</a></li>
+                    <li><a href="#story">Our Story</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#location">Venue</a></li>
+                    <li><a href="#rsvp">RSVP</a></li>
+                </ul>
+                <div class="music-control">
+                    <button id="music-toggle" class="music-btn"><i class="fas fa-music"></i></button>
+                </div>
             </div>
         </nav>
 
+        <!-- Hero Section -->
         <section id="hero" class="hero">
             <div class="hero-content">
-                <h1>In the Name of Allah</h1>
+                <div class="decorative-border"></div>
+                <h1 class="wedding-title">In the Name of Allah</h1>
                 <div class="couple-hero">
-                    <span class="groom">Groom Name</span> &amp; <span class="bride">Bride Name</span>
+                    <span class="groom">[Groom Name]</span>
+                    <span class="amp">&amp;</span>
+                    <span class="bride">[Bride Name]</span>
                 </div>
-                <p class="date">Date: [Put your date here]</p>
+                <div class="wedding-info">
+                    <p class="date">Saturday, [Date]</p>
+                    <p class="location">[Venue City], [Country]</p>
+                </div>
+                <div class="islamic-motif"></div>
+            </div>
+            <div class="scroll-hint">
+                <i class="fas fa-chevron-down"></i>
             </div>
         </section>
+
+        <!-- Countdown -->
+        <section id="countdown" class="countdown-section">
+            <div class="section-header">
+                <h2>Countdown to Our Union</h2>
+            </div>
+            <div class="countdown-container">
+                <div class="countdown-box">
+                    <span id="days" class="number">00</span>
+                    <span class="label">Days</span>
+                </div>
+                <div class="countdown-box">
+                    <span id="hours" class="number">00</span>
+                    <span class="label">Hours</span>
+                </div>
+                <div class="countdown-box">
+                    <span id="minutes" class="number">00</span>
+                    <span class="label">Minutes</span>
+                </div>
+                <div class="countdown-box">
+                    <span id="seconds" class="number">00</span>
+                    <span class="label">Seconds</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Couple Story -->
+        <section id="story" class="story-section">
+            <div class="section-header">
+                <h2>Our Journey</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>First Meeting</h3>
+                        <p>[Date/Story snippet]</p>
+                    </div>
+                </div>
+                <!-- More items -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Engagement</h3>
+                        <p>[Details]</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery -->
+        <section id="gallery" class="gallery-section">
+            <div class="section-header">
+                <h2>Memories</h2>
+            </div>
+            <div class="masonry-grid" id="masonry-grid">
+                <!-- Images populated by JS -->
+            </div>
+        </section>
+
+        <!-- Events -->
+        <section id="events" class="events-section">
+            <div class="section-header">
+                <h2>Celebration Events</h2>
+            </div>
+            <div class="events-grid">
+                <!-- Event cards populated by JS or static -->
+            </div>
+        </section>
+
+        <!-- Location -->
+        <section id="location" class="location-section">
+            <div class="section-header">
+                <h2>Venue Location</h2>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d...[REPLACE WITH ACTUAL]" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <button onclick="getDirections()" class="directions-btn">Get Directions</button>
+        </section>
+
+        <!-- RSVP -->
+        <section id="rsvp" class="rsvp-section">
+            <div class="section-header">
+                <h2>Kindly RSVP</h2>
+            </div>
+            <form id="rsvp-form" class="rsvp-form">
+                <input type="text" id="guest-name" placeholder="Full Name" required>
+                <input type="tel" id="phone" placeholder="Phone Number" required>
+                <select id="attendees" required>
+                    <option value="">Number of Attendees</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4+</option>
+                </select>
+                <select id="attendance" required>
+                    <option value="">Will you attend?</option>
+                    <option value="yes">Yes, Insha'Allah</option>
+                    <option value="no">No</option>
+                </select>
+                <textarea id="message" placeholder="Special Message or Dietary Requirements"></textarea>
+                <button type="submit">Confirm Attendance</button>
+            </form>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>Made with love &amp; duas • [Year]</p>
+            <div class="share-buttons">
+                <button onclick="shareWhatsApp()">Share on WhatsApp</button>
+                <button onclick="addToCalendar()">Add to Calendar</button>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Music Player -->
+    <audio id="background-music" loop>
+        <source src="https://example.com/nasheed.mp3" type="audio/mpeg"> <!-- Replace with actual -->
+    </audio>
+    <div class="floating-music">
+        <button id="floating-music-toggle"><i class="fas fa-play"></i></button>
     </div>
 
     <script src="script.js"></script>
