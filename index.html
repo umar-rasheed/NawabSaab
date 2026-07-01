@@ -6,41 +6,38 @@
     <title>Umar Rasheed & Aiesha Bashir</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <div class="card">
-            <div class="header">
-                <div class="bismillah">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْم</div>
-                <h1 class="couple">Umar Rasheed<br>&<br>Aiesha Bashir</h1>
-            </div>
+    <!-- Envelope -->
+    <div id="envelope" class="envelope">
+        <div class="flap"></div>
+        <div class="invite-text">Tap to Open</div>
+    </div>
 
-            <div class="content">
-                <p class="invitation">We joyfully invite you to grace our wedding celebrations</p>
+    <!-- Main Invitation -->
+    <div id="main-invitation" class="main-invitation hidden">
+        <div class="bismillah">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْم</div>
+        <h1 class="couple">Umar Rasheed & Aiesha Bashir</h1>
 
-                <div class="events">
-                    <div class="event-item">
-                        <h3>Mehndi</h3>
-                        <p>28 July 2026</p>
-                    </div>
-                    <div class="event-item">
-                        <h3>Barat</h3>
-                        <p>30 July 2026 • 3:00 PM</p>
-                        <p>Sialkot Grand Event Marquee</p>
-                    </div>
-                    <div class="event-item">
-                        <h3>Walima</h3>
-                        <p>2 August 2026 • 2:00 PM</p>
-                        <p>Bradan Marquee</p>
-                    </div>
-                </div>
-            </div>
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="mehndi">Mehndi</button>
+            <button class="tab-btn" data-tab="barat">Barat</button>
+            <button class="tab-btn" data-tab="walima">Walima</button>
+        </div>
 
-            <div class="footer">
-                <p>May Allah bless our union</p>
-                <button class="share-btn">Share with Family</button>
-            </div>
+        <div id="mehndi" class="tab-content">
+            <h2>Mehndi Ceremony</h2>
+            <p>28 July 2026</p>
+        </div>
+        <div id="barat" class="tab-content hidden">
+            <h2>Barat</h2>
+            <p>30 July 2026 • 3:00 PM</p>
+            <p>Sialkot Grand Event Marquee</p>
+        </div>
+        <div id="walima" class="tab-content hidden">
+            <h2>Walima</h2>
+            <p>2 August 2026 • 2:00 PM</p>
+            <p>Bradan Marquee</p>
         </div>
     </div>
 
