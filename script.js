@@ -1,29 +1,13 @@
-// Envelope Opening + Tab System
-document.getElementById('envelope').addEventListener('click', function() {
-    const envelope = this;
-    const main = document.getElementById('main-invitation');
+function toggleEvent(card) {
+    const body = card.querySelector('.event-body');
+    const arrow = card.querySelector('.arrow');
     
-    // Animate flap
-    envelope.style.transform = 'rotateX(180deg)';
-    
-    setTimeout(() => {
-        envelope.classList.add('hidden');
-        main.classList.remove('hidden');
-    }, 800);
-});
+    body.classList.toggle('show');
+    arrow.style.transform = body.classList.contains('show') ? 'rotate(180deg)' : 'rotate(0)';
+}
 
-// Tab functionality
-const tabButtons = document.querySelectorAll('.tab-btn');
-const tabContents = document.querySelectorAll('.tab-content');
-
-tabButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        // Remove active from all
-        tabButtons.forEach(btn => btn.classList.remove('active'));
-        tabContents.forEach(content => content.classList.add('hidden'));
-        
-        // Activate clicked
-        button.classList.add('active');
-        document.getElementById(button.dataset.tab).classList.remove('hidden');
-    });
+// Open the invitation
+document.getElementById('closed-card').addEventListener('click', function() {
+    this.style.display = 'none';
+    document.getElementById('open-content').classList.remove('hidden');
 });
